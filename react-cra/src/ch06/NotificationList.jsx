@@ -3,12 +3,15 @@ import Notification from "./Notification";
 
 const reservedNotifications = [
     {
+        id: 1,
         message: "This is a reserved notification.",
     },
     {
+        id: 2,
         message: "This is another reserved notification.",
     },
     {
+        id: 3,
         message: "This is the last reserved notification.",
     },
 ];
@@ -34,6 +37,9 @@ class NotificationList extends React.Component {
                     notifications: notifications,
                 });
             } else {
+                this.setState({
+                    notifications: [],
+                });
                 clearInterval(timer);
             }
         }, 1000);
@@ -49,8 +55,14 @@ class NotificationList extends React.Component {
         return (
             <div>
                 {this.state.notifications.map((notification) => {
-                    return <Notification message={notification.message} />;
-                })}
+                    return (
+                        <Notification 
+                            key={notification.id}
+                            id={notification.id}
+                            message={notification.message}
+                        />
+                    );
+                })}    
             </div>
         );
     }
