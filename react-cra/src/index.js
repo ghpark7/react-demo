@@ -14,11 +14,12 @@ import LandingPage from "./ch09/LandingPage";
 import AttendanceBook from "./ch10/AttendanceBook";
 import SignUp from "./ch11/SignUp";
 import Calculator from "./ch12/Calculator";
+import ProfileCard from "./ch13/ProfileCard";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Calculator />
+    <ProfileCard />
   </React.StrictMode>
 );
 // If you want to start measuring performance in your app, pass a function
