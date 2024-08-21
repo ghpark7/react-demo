@@ -30,7 +30,6 @@ const Game = () => {
         const computerChoice = choices[Math.floor(Math.random() * 3)];
         const result = determineWinner(userChoice, computerChoice);
 
-        // 최근 판정이 윗줄에 보이도록 history 업데이트
         setHistory([`사람=${userChoice} : 컴퓨터=${computerChoice} => ${result}`, ...history]);
 
         setCount(count + 1);
