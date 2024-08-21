@@ -9,11 +9,12 @@ import AutoLayoutExample from './bootstrap/AutoLayoutExample';
 import AutoLayoutSizingExample from './bootstrap/AutoLayoutSizingExample';
 import VerticalExample from './bootstrap/VerticalExample';
 import HorizontalExample from './bootstrap/HorizontalExample';
+import BasicExample from './bootstrap/BasicExample';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HorizontalExample />
+    <BasicExample />
   </React.StrictMode>
 );
 
