@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Button, Container, Row, Col, Card, ListGroup, Alert } from 'react-bootstrap';
+import { Button, Container, Row, Col, Card, ListGroup, Modal } from 'react-bootstrap';
 
 const Game = () => {
   const [count, setCount] = useState(0);
   const [score, setScore] = useState(0);
   const [history, setHistory] = useState([]);
   const [gameEnded, setGameEnded] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const choices = ['가위', '바위', '보'];
   
@@ -36,6 +37,7 @@ const Game = () => {
 
     if (count + 1 === 10) {
       setGameEnded(true);
+      setShowModal(true);
     }
   };
 
@@ -44,6 +46,7 @@ const Game = () => {
     setScore(0);
     setHistory([]);
     setGameEnded(false);
+    setShowModal(false);
   };
 
   return (
@@ -74,16 +77,27 @@ const Game = () => {
                   <ListGroup.Item key={index}>{item}</ListGroup.Item>
                 ))}
               </ListGroup>
-              {gameEnded && (
-                <Alert variant="success" className="text-center mt-4">
-                  <h4>게임종료</h4>
-                  <Button variant="success" onClick={handleRestart}>새로운 게임 시작</Button>
-                </Alert>
-              )}
             </Card.Body>
           </Card>
         </Col>
       </Row>
+
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>게임종료</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          게임이 종료되었습니다. 새로운 게임을 시작하시겠습니까?
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>
+            닫기
+          </Button>
+          <Button variant="primary" onClick={handleRestart}>
+            새로운 게임 시작
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 };
