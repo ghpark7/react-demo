@@ -7,11 +7,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ContainerExample from './bootstrap/ContainerExample';
 import AutoLayoutExample from './bootstrap/AutoLayoutExample';
 import AutoLayoutSizingExample from './bootstrap/AutoLayoutSizingExample';
+import VerticalExample from './bootstrap/VerticalExample';
+import HorizontalExample from './bootstrap/HorizontalExample';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AutoLayoutSizingExample />
+    <HorizontalExample />
   </React.StrictMode>
 );
 
