@@ -5,11 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ContainerExample from './bootstrap/ContainerExample';
+import AutoLayoutExample from './bootstrap/AutoLayoutExample';
+import AutoLayoutSizingExample from './bootstrap/AutoLayoutSizingExample';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ContainerExample />
+    <AutoLayoutSizingExample />
   </React.StrictMode>
 );
 
